@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# This commands will reset the tables to repopulate the tables
+puts "Deleting tables..."
+Flight.delete_all
+Airport.delete_all
+puts "Tables deleted"
+
 airports = Airport.create([
   { code: "BCD", name: "Bacolod-Silay Airport" },
   { code: "DRP", name: "Bicol International Airport" },
@@ -48,3 +54,22 @@ airports = Airport.create([
   { code: "TBH", name: "Tugdan Airport" },
   { code: "VRC", name: "Virac Airport" },
 ])
+
+airport_ids = Airport.ids
+100.times do |i|
+  departure = rand(airport_ids[0]..airport_ids[-1])
+  arrival = nil
+  loop do
+    arrival = rand(airport_ids[0]..airport_ids[-1])
+    break unless departure == arrival
+  end
+
+  Flight.create(
+    departure_airport_id: departure,
+    arrival_airport_id: arrival,
+    date: Time.now + rand(0..5).day,
+    duration: rand(1..3)
+  )
+
+  puts "Flight created!"
+end
