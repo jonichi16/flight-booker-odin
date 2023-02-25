@@ -2,3 +2,7 @@
 <h2>Your One-Stop Shop for Flights</h2>
 
 <%= render "flight_search_form" %>
+
+<% unless @flights.empty? %>
+  <%= render "flight_result_form", flights: @flights %>
+<% end %>

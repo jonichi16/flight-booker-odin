@@ -1,0 +1,27 @@
+<h3>Search Results:</h3>
+
+<%= form_with url: "/flights", method: :get, data: { turbo: false } do |form| %>
+  <% flights.each do |flight| %>
+    <%= form.label :flight_details do %>
+      <%= form.radio_button :flight_id, flight.id, checked: flight.id == @default_selected_flight.id %>
+      <div class="flight-details-card">
+        <div class="departure-details">
+          <p><%= flight.date.strftime("%I:%M %p") %></p>
+          <p><%= flight.departure_airport.name %> <span>(<%= flight.departure_airport.code %>)</span></p>
+        </div>
+        <div class="trip_details">
+          <p>Nonstop</p>
+          <p><%= pluralize(flight.duration, "hour") %></p>
+        </div>
+        <div class="arrival-details">
+          <p><%= (flight.date + flight.duration.hour).strftime("%I:%M %p") %></p>
+          <p><%= flight.arrival_airport.name %> <span>(<%= flight.arrival_airport.code %>)</span></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= form.hidden_field :passenger, value: params[:num_passenger] %>
+
+  <%= form.submit "Select Flight" %>
+<% end %>
