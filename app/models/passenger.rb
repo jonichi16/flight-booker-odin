@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :bookings
+  belongs_to :booking, inverse_of: :passengers
   has_many :flights, through: :bookings
 
   validates :name, :email, presence: true

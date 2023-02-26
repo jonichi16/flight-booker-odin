@@ -1,6 +1,6 @@
 <h3>Search Results:</h3>
 
-<%= form_with url: "/flights", method: :get, data: { turbo: false } do |form| %>
+<%= form_with url: "/bookings/new", method: :get, data: { turbo: false } do |form| %>
   <% flights.each do |flight| %>
     <%= form.label :flight_details do %>
       <%= form.radio_button :flight_id, flight.id, checked: flight.id == @default_selected_flight.id %>
@@ -21,7 +21,7 @@
     <% end %>
   <% end %>
 
-  <%= form.hidden_field :passenger, value: params[:num_passenger] %>
+  <%= form.hidden_field :num_passenger, value: params[:num_passenger] %>
 
   <%= form.submit "Select Flight" %>
 <% end %>
