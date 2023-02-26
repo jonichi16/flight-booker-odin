@@ -12,10 +12,14 @@ class BookingsController < ApplicationController
     @booking = @flight.bookings.create(booking_params)
 
     if @booking.save
-      redirect_to @booking, notice: "Thank you for your Purchase"
+      redirect_to @booking
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private

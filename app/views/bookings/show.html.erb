@@ -1,0 +1,46 @@
+<h2>Booking Confirmation</h2>
+<p>Ticket No.: <%= @booking.id %> | Booked On <%= @booking.created_at.strftime("%m/%d/%y") %></p>
+
+<h3>Flight Details</h3>
+
+<div class="booking-flight-details">
+  <div class="booking-departing">
+    <div class="departure-details">
+      <p><%= @booking.flight.date.strftime("%m/%d/%y") %></p>
+      <p><%= @booking.flight.departure_airport.name %> <span>(<%= @booking.flight.departure_airport.code %>)</span></p>
+      <p><%= @booking.flight.date.strftime("%I:%M %p") %></p>
+    </div>
+    <div class="trip_details">
+      <p>Nonstop</p>
+      <p><%= pluralize(@booking.flight.duration, "hour") %></p>
+    </div>
+    <div class="arrival-details">
+      <p><%= @booking.flight.arrival_airport.name %> <span>(<%= @booking.flight.arrival_airport.code %>)</span></p>
+      <p><%= (@booking.flight.date + @booking.flight.duration.hour).strftime("%I:%M %p") %></p>
+    </div>
+  </div>
+</div>
+
+<h3>Passenger Information</h3>
+
+<div class="passenger-info">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @booking.passengers.each_with_index do |passenger, i| %>
+        <tr>
+          <th scope="row"><%= i + 1 %></th>
+          <td><%= passenger.name %></td>
+          <td><%= passenger.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
