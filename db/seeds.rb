@@ -7,32 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # This commands will reset the tables to repopulate the tables
-puts "Deleting tables..."
-Flight.delete_all
-Airport.delete_all
-puts "Tables deleted"
 
 airports = Airport.create([
-  { code: "DRP", name: "Bicol International Airport" },
-  { code: "TAG", name: "Bohol-Panglao International Airport " },
-  { code: "BXU", name: "Bancasi Airport" },
-  { code: "CYZ", name: "Cauayan Airport" },
-  { code: "CBO", name: "Cotabato Airport" },
-  { code: "DPL", name: "Dipolog Airport" },
-  { code: "DGT", name: "Dumaguete-Sibulan Airport" },
-  { code: "GES", name: "General Santos International Airport" },
-  { code: "OZC", name: "Labo Airport" },
-  { code: "CGY", name: "Laguindingan Airport" },
-  { code: "PAG", name: "Pagadian Airport" },
-  { code: "RXS", name: "Roxas Airport" },
-  { code: "SFS", name: "Subic Bay International Airport" },
-  { code: "TUG", name: "Tuguegarao Airport" },
-  { code: "ZAM", name: "Zamboanga International Airport" },
-  { code: "BSO", name: "Basco Airport" },
-  { code: "CYP", name: "Calbayog Airport" },
-  { code: "CGM", name: "Camiguin Airport" },
-  { code: "OMC", name: "Ormoc Airport" },
-  { code: "SUG", name: "Surigao Airport" }
+  { code: "ASG", name: "Asgard Airport" },
+  { code: "VAN", name: "Vanaheim Airport " },
+  { code: "ALF", name: "Alfheim Airport" },
+  { code: "MID", name: "Midgard Airport" },
+  { code: "JOT", name: "Jotunheim Airport" },
+  { code: "NID", name: "Nidavellir Airport" },
+  { code: "SVA", name: "Svartalfheim Airport" },
+  { code: "HEL", name: "Helheim" },
+  { code: "MUS", name: "Muspelheim Airport" }
 ])
 
 airport_ids = Airport.ids
@@ -41,11 +26,11 @@ airport_ids.each do |departure|
     airport_ids.each do |arrival|
       next if arrival == departure
   
-      rand(1..3).times do |i|
+      rand(1..30).times do |i|
         Flight.create(
               departure_airport_id: departure,
               arrival_airport_id: arrival,
-              date: DateTime.new(2023, 2, Time.now.day + i, rand(0..23), 0, 0),
+              date: Time.new(Time.now.year, Time.now.month, Time.now.day, rand(0..23), 0, 0) + i.day,
               duration: rand(1..3)
             )
         
