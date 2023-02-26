@@ -5,4 +5,7 @@
 
 <% unless @flights.empty? %>
   <%= render "flight_result_form", flights: @flights %>
+<% else %>
+  <p>Please select your flight details</p>
+  <%= render "list_of_airports", airports: @airports %>
 <% end %>

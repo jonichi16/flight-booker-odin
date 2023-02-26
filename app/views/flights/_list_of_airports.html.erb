@@ -1,0 +1,19 @@
+<h3>List of Available Airports</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% airports.each do |airport| %>
+      <tr>
+        <td><%= airport.code %></td>
+        <td><%= airport.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
