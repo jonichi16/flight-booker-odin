@@ -1,0 +1,38 @@
+.container {
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.primary-header {
+  font-family: var(--font-header);
+  padding: 2.5em;
+  text-align: center;
+  color: var(--color-primary-900);
+}
+
+.main-header {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.sub-header {
+  font-size: 1rem;
+  margin-top: 0.5em;
+  font-weight: var(--font-weight-regular);
+}
+
+@media only screen and (min-width: 600px) {
+  .primary-header {
+    padding: 4em;
+  }
+
+  .main-header {
+    font-size: 4rem;
+  }
+
+  .sub-header {
+    font-size: 1.5rem;
+  }
+}
