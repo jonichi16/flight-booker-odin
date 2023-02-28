@@ -82,9 +82,10 @@ select {
 }
 
 .form,
-.airport-table {
+.airport-table,
+.search-result {
   width: 100%;
-  max-width: 500px;
+  max-width: 660px;
   margin: 0 auto;
 }
 
@@ -124,6 +125,57 @@ select {
   border: 2px solid var(--color-primary-900);
 }
 
+.search-result {
+  padding: 2em 0;
+}
+
+input[type='radio'] {
+  width: 16px;
+  height: 16px;
+}
+
+.flight-details-card {
+  display: flex;
+  margin-bottom: 1em;
+  align-items: center;
+  accent-color: var(--color-primary-900);
+  gap: 1em;
+}
+
+.flight-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  padding: 1em 1.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.departure-details .time,
+.arrival-details .time {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.departure-details .airport,
+.arrival-details .airport {
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+}
+
+.trip-details {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-400);
+}
+
+hr {
+  display: none;
+}
+
 @media only screen and (min-width: 600px) {
   .primary-header {
     padding: 4em;
@@ -135,5 +187,37 @@ select {
 
   .sub-header {
     font-size: 1.5rem;
+  }
+
+  .search-result {
+    padding: 3em 0;
+  }
+
+  .flight-details {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5em 1.5em;
+  }
+
+  .departure-details .time,
+  .arrival-details .time {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .departure-details .airport,
+  .arrival-details .airport {
+    font-size: 1.125rem;
+  }
+
+  .trip-details {
+    font-size: 1rem;
+    text-align: center;
+    width: 20%;
+  }
+
+  hr {
+    display: block;
   }
 }
