@@ -81,6 +81,13 @@ select {
   padding: 5px;
 }
 
+.form,
+.airport-table {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .list-of-airport {
   text-align: center;
   padding: 2em 0;
@@ -94,8 +101,6 @@ select {
 
 .airport-table {
   table-layout: fixed;
-  width: 100%;
-  max-width: 500px;
   border-collapse: collapse;
   border: 2px solid var(--color-primary-900);
 }

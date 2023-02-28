@@ -1,4 +1,4 @@
-<div>
+<div class="form">
   <%= form_with url: "/flights", method: :get, data: { turbo: false }, class: "search-form" do |form| %>
     <div class="field">
       <%= select_tag(:num_passenger, options_for_select([["1 Passenger", 1], ["2 Passengers", 2], ["3 Passengers", 3], ["4 Passengers", 4]])) %>
