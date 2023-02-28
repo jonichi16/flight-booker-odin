@@ -1,3 +1,13 @@
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
 .container {
   width: 85%;
   max-width: 1000px;
@@ -21,6 +31,20 @@
   font-size: 1rem;
   margin-top: 0.5em;
   font-weight: var(--font-weight-regular);
+}
+
+.footer {
+  background-color: var(--color-primary-900);
+  color: var(--color-text-100);
+  text-align: center;
+  padding: 1em;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 5px;
+  opacity: 0.5;
 }
 
 .button {
@@ -71,6 +95,7 @@ select {
 .airport-table {
   table-layout: fixed;
   width: 100%;
+  max-width: 500px;
   border-collapse: collapse;
   border: 2px solid var(--color-primary-900);
 }

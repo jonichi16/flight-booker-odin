@@ -14,12 +14,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="body">
     <header class="container primary-header">
       <%= render "layouts/header" %>
     </header>
-    <main class="container">
+    <main class="container main">
       <%= yield %>
     </main>
+    <footer class="footer">
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
