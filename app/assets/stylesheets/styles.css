@@ -85,7 +85,8 @@ select {
 .form,
 .airport-table,
 .search-result,
-.bookings {
+.bookings,
+.confirmation {
   width: 100%;
   max-width: 660px;
   margin: 0 auto;
@@ -181,6 +182,8 @@ hr {
 
 .flight-id {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
@@ -189,6 +192,7 @@ hr {
   color: var(--color-text-100);
   text-align: center;
   border-radius: 5px 5px 0 0;
+  gap: 1em;
 }
 
 .ticket {
@@ -221,6 +225,63 @@ hr {
 .passenger-form {
   max-width: 330px;
   margin: 0 auto;
+}
+
+.confirmation-title {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.confirmation-subtitle {
+  font-size: 0.6875rem;
+  color: var(--color-text-400);
+}
+
+.booking {
+  margin: 2em 0;
+  padding-inline: 0;
+}
+
+.ticket-divider {
+  width: 100%;
+  border: 1px dashed var(--color-primary-200);
+}
+
+.ticket-passengers {
+  width: 80%;
+  max-width: 245px;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.ticket-passenger-title {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  margin: 1em 0;
+}
+
+.passenger-info {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.passenger-header {
+  font-weight: var(--font-weight-bold);
+}
+
+.passenger {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ticket-flight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  padding: 1em 1.5em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -284,5 +345,39 @@ hr {
 
   .field {
     font-size: 1rem;
+  }
+
+  .confirmation-title {
+    font-size: 1.5rem;
+  }
+
+  .confirmation-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .ticket-flight {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    padding-inline: 2em;
+  }
+
+  .confirmation .flight-details {
+    flex-direction: column;
+    padding-inline: 0;
+    gap: 2em;
+  }
+
+  .ticket-passengers {
+    max-width: 350px;
+  }
+
+  .ticket-passenger-title {
+    font-size: 1.5rem;
+  }
+
+  .passenger-header {
+    padding-bottom: 1em;
   }
 }
