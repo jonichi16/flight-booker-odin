@@ -28,11 +28,11 @@
     <%= form.fields_for :passengers do |sub_form| %>
       <p class="field-title">Passenger <%= i + 1 %></p>
       <div class="passenger-details">
-        <div class="field">
+        <div class="field-passenger">
           <%= sub_form.label :name %>
           <%= sub_form.text_field :name %>
         </div>
-        <div class="field">
+        <div class="field-passenger">
           <%= sub_form.label :email %>
           <%= sub_form.email_field :email %>
         </div>
