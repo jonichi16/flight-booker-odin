@@ -37,6 +37,7 @@
   background-color: var(--color-primary-900);
   color: var(--color-text-100);
   text-align: center;
+  margin-top: 2em;
   padding: 1em;
 }
 
@@ -83,7 +84,8 @@ select {
 
 .form,
 .airport-table,
-.search-result {
+.search-result,
+.bookings {
   width: 100%;
   max-width: 660px;
   margin: 0 auto;
@@ -144,6 +146,7 @@ input[type='radio'] {
 
 .flight-details {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   gap: 1em;
@@ -174,6 +177,50 @@ input[type='radio'] {
 
 hr {
   display: none;
+}
+
+.flight-id {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em 1.5em;
+  background-color: var(--color-primary-900);
+  color: var(--color-text-100);
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.ticket {
+  padding-top: 4.5em;
+  margin-bottom: 2.5em;
+}
+
+.field-title {
+  font-size: 0.875rem;
+}
+
+.passenger-details {
+  margin-bottom: 1.5em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  margin: 1em 0;
+}
+
+.field input {
+  height: 2.5em;
+  padding: 0.5em;
+  font-weight: var(--font-weight-regular);
+}
+
+.passenger-form {
+  max-width: 330px;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -219,5 +266,23 @@ hr {
 
   hr {
     display: block;
+  }
+
+  .ticket {
+    padding-top: 5.5em;
+    padding-inline: 2em;
+  }
+
+  .flight-id {
+    padding-inline: 2em;
+    text-align: start;
+  }
+
+  .field-title {
+    font-size: 1rem;
+  }
+
+  .field {
+    font-size: 1rem;
   }
 }

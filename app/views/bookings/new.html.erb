@@ -1,43 +1,45 @@
-<h3>Bookings</h3>
-
-<div class="flight-details-card">
-  <div class="flight-id">
-    <p>Flight ID: <%= @flight.id %></p>
-  </div>
-  <div class="departure-details">
-    <p><%= @flight.date.strftime("%I:%M %p") %></p>
-    <p><%= @flight.departure_airport.name %> <span>(<%= @flight.departure_airport.code %>)</span></p>
-  </div>
-  <div class="trip_details">
-    <p>Nonstop</p>
-    <p><%= pluralize(@flight.duration, "hour") %></p>
-  </div>
-  <div class="arrival-details">
-    <p><%= (@flight.date + @flight.duration.hour).strftime("%I:%M %p") %></p>
-    <p><%= @flight.arrival_airport.name %> <span>(<%= @flight.arrival_airport.code %>)</span></p>
-  </div>
-</div>
-
-<h3>Please Enter Passenger Information:</h3>
-
-<%= form_with model: @booking, data: { turbo: false } do |form| %>
-  
-  <%= form.hidden_field :flight_id, value: params[:flight_id] %>
-  <% i = 0 %>
-  <%= form.fields_for :passengers do |sub_form| %>
-    <p>Passenger <%= i + 1 %></p>
-    <div class="passenger-details">
-      <div class="field">
-        <%= sub_form.label :name %>
-        <%= sub_form.text_field :name %>
-      </div>
-      <div class="field">
-        <%= sub_form.label :email %>
-        <%= sub_form.email_field :email %>
-      </div>
+<div class="bookings">
+  <div class="flight-details ticket">
+    <div class="flight-id">
+      <p>Flight ID #<%= @flight.id %></p>
+      <p class="flight-date"><%= @booking.flight.date.strftime("%b %d, %Y") %></p>
     </div>
-    <% i += 1 %>
+    <div class="departure-details">
+      <p class="time"><%= @flight.date.strftime("%I:%M %p") %></p>
+      <p class="airport"><%= @flight.departure_airport.name %> <span>(<%= @flight.departure_airport.code %>)</span></p>
+    </div>
+    <div class="trip-details">
+      <p>Nonstop</p>
+      <hr>
+      <p><%= pluralize(@flight.duration, "hour") %></p>
+    </div>
+    <div class="arrival-details">
+      <p class="time"><%= (@flight.date + @flight.duration.hour).strftime("%I:%M %p") %></p>
+      <p class="airport"><%= @flight.arrival_airport.name %> <span>(<%= @flight.arrival_airport.code %>)</span></p>
+    </div>
+  </div>
+  
+  <h3 class="section-title">Passenger Information:</h3>
+  
+  <%= form_with model: @booking, data: { turbo: false } do |form| %>
+  
+    <%= form.hidden_field :flight_id, value: params[:flight_id] %>
+    <% i = 0 %>
+    <%= form.fields_for :passengers do |sub_form| %>
+      <p class="field-title">Passenger <%= i + 1 %></p>
+      <div class="passenger-details">
+        <div class="field">
+          <%= sub_form.label :name %>
+          <%= sub_form.text_field :name %>
+        </div>
+        <div class="field">
+          <%= sub_form.label :email %>
+          <%= sub_form.email_field :email %>
+        </div>
+      </div>
+      <% i += 1 %>
+    <% end %>
+  
+    <%= form.submit "Purchase #{"Ticket".pluralize(i)}", class: "button" %>
   <% end %>
-
-  <%= form.submit "Purchase #{"Ticket".pluralize(i)}" %>
-<% end %>
+</div>
