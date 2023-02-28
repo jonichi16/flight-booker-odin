@@ -57,6 +57,43 @@ select {
   padding: 5px;
 }
 
+.list-of-airport {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  padding: 0.5em 0;
+}
+
+.airport-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--color-primary-900);
+}
+
+.airport-table thead th:first-child {
+  width: 30%;
+}
+
+.airport-table tbody tr:nth-child(odd) {
+  background-color: var(--color-primary-200);
+}
+
+.airport-table th {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+}
+
+.airport-table th,
+.airport-table td {
+  padding: 0.5em 0;
+  border: 2px solid var(--color-primary-900);
+}
+
 @media only screen and (min-width: 600px) {
   .primary-header {
     padding: 4em;
