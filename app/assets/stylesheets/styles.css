@@ -49,6 +49,7 @@
 }
 
 .button {
+  cursor: pointer;
   width: 100%;
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
@@ -59,6 +60,14 @@
   padding: 0.5em;
   border: none;
   border-radius: 5px;
+}
+
+.button:hover {
+  background-color: var(--color-primary-600);
+}
+
+.button:active {
+  transform: scale(0.9);
 }
 
 .link-button {
