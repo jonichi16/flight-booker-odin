@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <p>
+    Dear <%= @passenger.name %>,
+  </p>
+
+  <p>
+    We are delighted to confirm your flight booking with Odin Flight on <%= @passenger.booking.flight.date %>.
+  </p>
+
+  <p>
+    We look forward to welcoming you on board.
+  </p>
+</body>
+</html>
