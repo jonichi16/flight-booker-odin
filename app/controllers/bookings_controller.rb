@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
     @booking = @flight.bookings.create(booking_params)
 
     if @booking.save
+      @booking.passengers.each do |passenger|
+        PassengerMailer.confirmation_email(passenger).deliver_later
+      end
+      
       redirect_to @booking
     else
       render :new, status: :unprocessable_entity
@@ -23,7 +27,7 @@ class BookingsController < ApplicationController
   end
 
   private
-
+  
   def booking_params
     params.require(:booking).permit(:flight_id, passengers_attributes: [:name, :email])
   end
