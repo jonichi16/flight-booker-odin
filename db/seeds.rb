@@ -7,9 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # This commands will reset the tables to repopulate the tables
-Airport.delete_all
-Flight.delete_all
-
 airports = Airport.create([
   { code: "ASG", name: "Asgard Airport" },
   { code: "VAN", name: "Vanaheim Airport " },
