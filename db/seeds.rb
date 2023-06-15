@@ -7,17 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # This commands will reset the tables to repopulate the tables
-airports = Airport.create([
-  { code: "ASG", name: "Asgard Airport" },
-  { code: "VAN", name: "Vanaheim Airport " },
-  { code: "ALF", name: "Alfheim Airport" },
-  { code: "MID", name: "Midgard Airport" },
-  { code: "JOT", name: "Jotunheim Airport" },
-  { code: "NID", name: "Nidavellir Airport" },
-  { code: "SVA", name: "Svartalfheim Airport" },
-  { code: "HEL", name: "Helheim" },
-  { code: "MUS", name: "Muspelheim Airport" }
-])
+# airports = Airport.create([
+#   { code: "ASG", name: "Asgard Airport" },
+#   { code: "VAN", name: "Vanaheim Airport " },
+#   { code: "ALF", name: "Alfheim Airport" },
+#   { code: "MID", name: "Midgard Airport" },
+#   { code: "JOT", name: "Jotunheim Airport" },
+#   { code: "NID", name: "Nidavellir Airport" },
+#   { code: "SVA", name: "Svartalfheim Airport" },
+#   { code: "HEL", name: "Helheim" },
+#   { code: "MUS", name: "Muspelheim Airport" }
+# ])
 
 airport_ids = Airport.ids
 airport_ids.each do |departure|
