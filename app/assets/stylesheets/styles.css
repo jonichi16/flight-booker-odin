@@ -38,7 +38,7 @@
   color: var(--color-text-100);
   text-align: center;
   margin-top: 2em;
-  padding: 1em;
+  padding: 0.75em;
 }
 
 .footer p {
@@ -308,7 +308,7 @@ hr {
   }
 
   .main-header {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .sub-header {
