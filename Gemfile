@@ -7,7 +7,7 @@ gem "rails", "7.0.6"
 
 gem "sprockets-rails"
 gem "pg", "~> 1.5"
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.3"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
